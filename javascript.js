@@ -29,7 +29,7 @@ function getHumanChoise(button) {
 	let matchResult = ""
 
 	if (cChoise === hChoise) {
-		matchInfo.innerHTML = `<p>Computer Choise [${cChoise}]<br>Human Choise [${hChoise}]<br>Match result [draw]<br>Computer score [${cScore}] :  Human score [${hScore}]</p>`
+		matchInfo.innerHTML = `<p>Computer score [${cScore}] :  Human score [${hScore}]<br>Computer Choise [${cChoise}]<br>Human Choise [${hChoise}]<br>Match result [draw]</p>`
 	} else {
 		switch (true) {
 			case (cChoise === "rock" && hChoise === "paper"):
@@ -57,7 +57,7 @@ function getHumanChoise(button) {
 				hScore += 1;
 				break;
 		}
-		matchInfo.innerHTML = `<p>Computer Choise [${cChoise}]<br>Human Choise [${hChoise}]<br>Match result [${matchResult}]<br>Computer score [${cScore}] : Human score [${hScore}]</p>`
+		matchInfo.innerHTML = `<p>Computer score [${cScore}] :  Human score [${hScore}]<br>Computer Choise [${cChoise}]<br>Human Choise [${hChoise}]<br>Match result [${matchResult}]</p>`
 		console.log(matchResult)
 	}
 }

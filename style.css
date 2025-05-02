@@ -12,21 +12,19 @@ body {
 
 .display {
 	width: 70%;
-	height: 700px;
 	background-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .computer {
 	transform: scaleX(-1);
 }
 
-.player {
-}
-
 @media screen and (min-width: 1600px) {
   .display {
 	 width: 30%;
-	 height: 900px;
   }
 }
 

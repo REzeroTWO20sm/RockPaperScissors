@@ -1,6 +1,5 @@
 body {
 	font-family: "DotGothic16", sans-serif;
-	height: 1000px;
 	margin: auto;
 	padding-top: 1%;
 	color: white;
@@ -12,27 +11,22 @@ body {
 }
 
 .display {
-	min-width: 60%;
-	height: 60%;
-	background-color: white;
+	width: 70%;
+	height: 700px;
+	background-color: black;
 }
 
 .computer {
-	height: 65%;
-	background-color: lightblue;
+	transform: scaleX(-1);
 }
 
 .player {
-	height: 35%;
-	background-image: url(./images/playerHand/player_handShake_central.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 1600px) {
- .display {
-	 min-width: 60%;
-	 min-height: 50%;
+  .display {
+	 width: 30%;
+	 height: 900px;
   }
 }
 
@@ -46,14 +40,22 @@ p {
 }
 
 .buttons {
-	min-width: 60%;
+	width: 60%;
+	height: 10%;
 	display: flex;
 	gap: 16px;
+	margin-bottom: 5%;
+}
+
+@media screen and (min-width: 1600px) {
+  .buttons {
+	  width: 35%;
+  }
 }
 
 button {
 	flex: 1 1 90px;
-	height: 50px;
+	min-height: 50px;
 	color: black;
 	background-color: lightgray;
 	font-family: "DotGothic16", sans-serif;

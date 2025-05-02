@@ -1,3 +1,17 @@
+// Preload images
+const imagePaths = [
+  './images/playerHand/player_handShake_central.jpg',
+  './images/playerHand/player_handShake_bottom.jpg',
+  './images/playerHand/player_handShake_top.jpg',
+  './images/playerHand/playerPaper.jpg',
+  './images/playerHand/playerScissors.jpg'
+];
+
+imagePaths.forEach(path => {
+  const img = new Image();
+  img.src = path;
+});
+
 function getComputerChoise() {
 	const variation = Math.random();
 	if (variation >= 0 && variation <= 0.33) {
@@ -19,21 +33,20 @@ const button_scissors = document.querySelector(".scissors");
 
 button_rock.addEventListener("click", function() {
 	getHumanChoise(this);
-	playerShakeAndChoseAnim('rock');
 });
 button_paper.addEventListener("click", function() {
 	getHumanChoise(this);
-	playerShakeAndChoseAnim('paper');
 });
 button_scissors.addEventListener("click", function() {
 	getHumanChoise(this);
-	playerShakeAndChoseAnim('scissors');
 });
 
 function getHumanChoise(button) {
 
 	const cChoise = getComputerChoise();
+	computerShakeAndChoseAnim(cChoise);
 	const hChoise = button.value;
+	playerShakeAndChoseAnim(hChoise);
 	console.log(cChoise,hChoise)
 	let matchResult = ""
 
@@ -110,4 +123,38 @@ function playerShakeAndChoseAnim(choise) {
 
 }
 
+function computerShakeAndChoseAnim(choise) {
+	const shakePos_1 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="100%" height="100%">`;
+	const shakePos_2 = `<img src="./images/playerHand/player_handShake_bottom.jpg" alt="playerShake" width="100%" height="100%">`;
+	const shakePos_3 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="100%" height="100%">`;
+	const shakePos_4 = `<img src="./images/playerHand/player_handShake_top.jpg" alt="playerShake" width="100%" height="100%">`;
+
+	const rock = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="100%" height="100%">`;
+	const paper = `<img src="./images/playerHand/playerPaper.jpg" alt="playerShake" width="100%" height="100%">`;
+	const scissors = `<img src="./images/playerHand/playerScissors.jpg" alt="playerShake" width="100%" height="100%">`;
+
+
+	const shakeList = [shakePos_1,shakePos_2,shakePos_3,shakePos_4];
+	let i = 0;
+	let j = 0;
+	const computerShake = setInterval(function (){
+		if (i === 4){
+			i = 0;
+			j++;
+		}
+		computerDisplay.innerHTML = shakeList[i];
+		i++;
+		if (j === 3){
+			clearInterval(computerShake);
+			if (choise === 'rock') {
+				computerDisplay.innerHTML = rock;
+			} else if (choise === 'paper') {
+				computerDisplay.innerHTML = paper;
+			} else {
+				computerDisplay.innerHTML = scissors;
+			}
+		}
+	},150);
+
+}
 

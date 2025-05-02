@@ -17,9 +17,18 @@ const button_rock = document.querySelector(".rock");
 const button_paper = document.querySelector(".paper");
 const button_scissors = document.querySelector(".scissors");
 
-button_rock.addEventListener("click", function() {getHumanChoise(this)});
-button_paper.addEventListener("click", function() {getHumanChoise(this)});
-button_scissors.addEventListener("click", function() {getHumanChoise(this)});
+button_rock.addEventListener("click", function() {
+	getHumanChoise(this);
+	playerShakeAndChoseAnim('rock');
+});
+button_paper.addEventListener("click", function() {
+	getHumanChoise(this);
+	playerShakeAndChoseAnim('paper');
+});
+button_scissors.addEventListener("click", function() {
+	getHumanChoise(this);
+	playerShakeAndChoseAnim('scissors');
+});
 
 function getHumanChoise(button) {
 
@@ -29,7 +38,7 @@ function getHumanChoise(button) {
 	let matchResult = ""
 
 	if (cChoise === hChoise) {
-		matchInfo.innerHTML = `<p>Computer score [${cScore}] :  Human score [${hScore}]<br>Computer Choise [${cChoise}]<br>Human Choise [${hChoise}]<br>Match result [draw]</p>`
+		matchInfo.innerHTML = `<p>Computer [${cChoise}]<br>Computer score [${cScore}]<br>Human score [${hScore}]<br>[draw]</p>`
 	} else {
 		switch (true) {
 			case (cChoise === "rock" && hChoise === "paper"):
@@ -57,8 +66,48 @@ function getHumanChoise(button) {
 				hScore += 1;
 				break;
 		}
-		matchInfo.innerHTML = `<p>Computer score [${cScore}] :  Human score [${hScore}]<br>Computer Choise [${cChoise}]<br>Human Choise [${hChoise}]<br>Match result [${matchResult}]</p>`
+		matchInfo.innerHTML = `<p>Computer [${cChoise}]<br>Computer score [${cScore}]<br>Human score [${hScore}]<br>[${matchResult}]</p>`
 		console.log(matchResult)
 	}
 }
+
+const display = document.querySelector(".display");
+const computerDisplay = document.querySelector(".computer");
+const playerDisplay = document.querySelector(".player");
+
+function playerShakeAndChoseAnim(choise) {
+	const shakePos_1 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="100%" height="100%">`;
+	const shakePos_2 = `<img src="./images/playerHand/player_handShake_bottom.jpg" alt="playerShake" width="100%" height="100%">`;
+	const shakePos_3 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="100%" height="100%">`;
+	const shakePos_4 = `<img src="./images/playerHand/player_handShake_top.jpg" alt="playerShake" width="100%" height="100%">`;
+
+	const rock = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="100%" height="100%">`;
+	const paper = `<img src="./images/playerHand/playerPaper.jpg" alt="playerShake" width="100%" height="100%">`;
+	const scissors = `<img src="./images/playerHand/playerScissors.jpg" alt="playerShake" width="100%" height="100%">`;
+
+
+	const shakeList = [shakePos_1,shakePos_2,shakePos_3,shakePos_4];
+	let i = 0;
+	let j = 0;
+	const playerShake = setInterval(function (){
+		if (i === 4){
+			i = 0;
+			j++;
+		}
+		playerDisplay.innerHTML = shakeList[i];
+		i++;
+		if (j === 3){
+			clearInterval(playerShake);
+			if (choise === 'rock') {
+				playerDisplay.innerHTML = rock;
+			} else if (choise === 'paper') {
+				playerDisplay.innerHTML = paper;
+			} else {
+				playerDisplay.innerHTML = scissors;
+			}
+		}
+	},150);
+
+}
+
 

@@ -1,5 +1,8 @@
 body {
-	margin: 0;
+	font-family: "DotGothic16", sans-serif;
+	height: 1000px;
+	margin: auto;
+	padding-top: 1%;
 	color: white;
 	background-color: black;
 	font-size: 40px;
@@ -8,19 +11,53 @@ body {
 	align-items: center;
 }
 
+.display {
+	min-width: 60%;
+	height: 60%;
+	background-color: white;
+}
+
+.computer {
+	height: 65%;
+	background-color: lightblue;
+}
+
+.player {
+	height: 35%;
+	background-image: url(./images/playerHand/player_handShake_central.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1600px) {
+ .display {
+	 min-width: 60%;
+	 min-height: 50%;
+  }
+}
+
+.matchInfo {
+	min-width: 80%;
+}
+
 p {
 	text-align: center;
 	margin: 5% 0;
 }
 
 .buttons {
+	min-width: 60%;
 	display: flex;
-	gap: 8px;
+	gap: 16px;
 }
 
 button {
+	flex: 1 1 90px;
+	height: 50px;
 	color: black;
 	background-color: lightgray;
-	font-size: 40px;
+	font-family: "DotGothic16", sans-serif;
+	font-weight: bold;
+	font-size: 22px;
 }
 

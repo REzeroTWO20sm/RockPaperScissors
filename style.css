@@ -1,5 +1,7 @@
 body {
-	margin: 0;
+	font-family: "DotGothic16", sans-serif;
+	margin: auto;
+	padding-top: 1%;
 	color: white;
 	background-color: black;
 	font-size: 40px;
@@ -8,19 +10,56 @@ body {
 	align-items: center;
 }
 
+.display {
+	width: 70%;
+	height: 700px;
+	background-color: black;
+}
+
+.computer {
+	transform: scaleX(-1);
+}
+
+.player {
+}
+
+@media screen and (min-width: 1600px) {
+  .display {
+	 width: 30%;
+	 height: 900px;
+  }
+}
+
+.matchInfo {
+	min-width: 80%;
+}
+
 p {
 	text-align: center;
 	margin: 5% 0;
 }
 
 .buttons {
+	width: 60%;
+	height: 10%;
 	display: flex;
-	gap: 8px;
+	gap: 16px;
+	margin-bottom: 5%;
+}
+
+@media screen and (min-width: 1600px) {
+  .buttons {
+	  width: 35%;
+  }
 }
 
 button {
+	flex: 1 1 90px;
+	min-height: 50px;
 	color: black;
 	background-color: lightgray;
-	font-size: 40px;
+	font-family: "DotGothic16", sans-serif;
+	font-weight: bold;
+	font-size: 22px;
 }
 

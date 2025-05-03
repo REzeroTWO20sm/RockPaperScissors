@@ -41,17 +41,20 @@ button_scissors.addEventListener("click", function() {
 	getHumanChoise(this);
 });
 
+let matchResult = "";
+
 function getHumanChoise(button) {
+	matchInfo.innerHTML = `<p>Computer score [${cScore}]<br>Human score [${hScore}]<br>[]</p>`;
+	matchInfo.style.color = "white";
 
 	const cChoise = getComputerChoise();
 	computerShakeAndChoseAnim(cChoise);
 	const hChoise = button.value;
 	playerShakeAndChoseAnim(hChoise);
-	console.log(cChoise,hChoise)
-	let matchResult = ""
+	console.log(cChoise,hChoise);
 
 	if (cChoise === hChoise) {
-		matchInfo.innerHTML = `<p>Computer [${cChoise}]<br>Computer score [${cScore}]<br>Human score [${hScore}]<br>[draw]</p>`
+		matchResult = "draw";
 	} else {
 		switch (true) {
 			case (cChoise === "rock" && hChoise === "paper"):
@@ -77,9 +80,8 @@ function getHumanChoise(button) {
 			case (cChoise === "scissors" && hChoise === "rock"):
 				matchResult = "human win!";
 				hScore += 1;
-				break;
-		}
-		matchInfo.innerHTML = `<p>Computer [${cChoise}]<br>Computer score [${cScore}]<br>Human score [${hScore}]<br>[${matchResult}]</p>`
+				break;		}
+		//matchInfo.innerHTML = `<p>Computer [${cChoise}]<br>Computer score [${cScore}]<br>Human score [${hScore}]<br>[${matchResult}]</p>`	
 		console.log(matchResult)
 	}
 }
@@ -116,6 +118,14 @@ function playerShakeAndChoseAnim(choise) {
 				playerDisplay.innerHTML = paper;
 			} else {
 				playerDisplay.innerHTML = scissors;
+			}
+			matchInfo.innerHTML = `<p>Computer score [${cScore}]<br>Human score [${hScore}]<br>[${matchResult}]</p>`
+			if (matchResult === "human win!") {
+				matchInfo.style.color = "#e15990";
+			} else if (matchResult === "computer win!") {
+				matchInfo.style.color = "#7cc66e";
+			} else {
+				matchInfo.style.color = "#fff";
 			}
 		}
 	},150);

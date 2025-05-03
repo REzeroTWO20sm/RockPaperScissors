@@ -89,14 +89,14 @@ const computerDisplay = document.querySelector(".computer");
 const playerDisplay = document.querySelector(".player");
 
 function playerShakeAndChoseAnim(choise) {
-	const shakePos_1 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="300px" height="250px">`;
-	const shakePos_2 = `<img src="./images/playerHand/player_handShake_bottom.jpg" alt="playerShake" width="300px" height="250px">`;
-	const shakePos_3 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="300px" height="250px">`;
-	const shakePos_4 = `<img src="./images/playerHand/player_handShake_top.jpg" alt="playerShake" width="300px" height="250px">`;
+	const shakePos_1 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="400px" height="350px">`;
+	const shakePos_2 = `<img src="./images/playerHand/player_handShake_bottom.jpg" alt="playerShake" width="400px" height="350px">`;
+	const shakePos_3 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="400px" height="350px">`;
+	const shakePos_4 = `<img src="./images/playerHand/player_handShake_top.jpg" alt="playerShake" width="400px" height="350px">`;
 
-	const rock = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="300px" height="250px">`;
-	const paper = `<img src="./images/playerHand/playerPaper.jpg" alt="playerShake" width="300px" height="250px">`;
-	const scissors = `<img src="./images/playerHand/playerScissors.jpg" alt="playerShake" width="300px" height="250px">`;
+	const rock = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="400px" height="350px">`;
+	const paper = `<img src="./images/playerHand/playerPaper.jpg" alt="playerShake" width="400px" height="350px">`;
+	const scissors = `<img src="./images/playerHand/playerScissors.jpg" alt="playerShake" width="400px" height="350px">`;
 
 	const shakeList = [shakePos_1,shakePos_2,shakePos_3,shakePos_4];
 	let i = 0;
@@ -123,14 +123,14 @@ function playerShakeAndChoseAnim(choise) {
 }
 
 function computerShakeAndChoseAnim(choise) {
-	const shakePos_1 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="300px" height="250px">`;
-	const shakePos_2 = `<img src="./images/playerHand/player_handShake_bottom.jpg" alt="playerShake" width="300px" height="250px">`;
-	const shakePos_3 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="300px" height="250px">`;
-	const shakePos_4 = `<img src="./images/playerHand/player_handShake_top.jpg" alt="playerShake" width="300px" height="250px">`;
+	const shakePos_1 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="400px" height="350px">`;
+	const shakePos_2 = `<img src="./images/playerHand/player_handShake_bottom.jpg" alt="playerShake" width="400px" height="350px">`;
+	const shakePos_3 = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="400px" height="350px">`;
+	const shakePos_4 = `<img src="./images/playerHand/player_handShake_top.jpg" alt="playerShake" width="400px" height="350px">`;
 
-	const rock = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="300px" height="250px">`;
-	const paper = `<img src="./images/playerHand/playerPaper.jpg" alt="playerShake" width="300px" height="250px">`;
-	const scissors = `<img src="./images/playerHand/playerScissors.jpg" alt="playerShake" width="300px" height="250px">`;
+	const rock = `<img src="./images/playerHand/player_handShake_central.jpg" alt="playerShake" width="400px" height="350px">`;
+	const paper = `<img src="./images/playerHand/playerPaper.jpg" alt="playerShake" width="400px" height="350px">`;
+	const scissors = `<img src="./images/playerHand/playerScissors.jpg" alt="playerShake" width="400px" height="350px">`;
 
 	const shakeList = [shakePos_1,shakePos_2,shakePos_3,shakePos_4];
 	let i = 0;
